@@ -1,2 +1,2 @@
-# paskaitos
+# Lectures
 Code sniplets from lectures
