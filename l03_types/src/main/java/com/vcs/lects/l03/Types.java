@@ -4,6 +4,8 @@ public class Types {
 
 	Boolean arTikrai = false;
 	boolean arNeTikrai = false;
+	
+
 
 	public static void main(String[] args) {
 
@@ -37,7 +39,63 @@ public class Types {
 		} else {
 			System.out.println(":( netelpa: " + didesnis);
 		}
+		
+		
+		new Types().stringai();
 
 	}
 
+	private void booleanai() {
+
+		boolean a = false;
+		boolean b = true;
+
+	}
+
+	private void stringai() {
+
+		
+		String textukas = "" + 73246.6;
+		
+		
+		
+		
+		char aa = '\n';
+		
+		System.out.println("tekstas su kabutemis");
+
+		System.out.println("tekstas \"su\" kabutemis");
+
+		System.out.println("is\nnaujos eilutes");
+
+		//escape’o \escapep’as\
+		System.out.println("escape’o \\escapep’as\\ ");
+
+		//utf8 \u2700 ✀
+		System.out.println("utf8 \\u2700 \u2600 "); 
+		
+		
+		
+		
+		
+		System.out.println();
+		
+		
+		
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
