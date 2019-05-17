@@ -21,9 +21,16 @@ public class Ifs {
 	}
 
 	private void karstoka(double temp) {
+
+		String ats = null;
+
 		if (temp >= 40) {
-			System.out.println("tu visciukas orkaitej :)");
+			ats = "tu visciukas orkaitej :)";
+
+			System.out.println(ats);
 		}
+
+//		System.out.println(ats);
 
 	}
 
