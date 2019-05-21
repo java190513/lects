@@ -19,7 +19,7 @@ public class Equaling {
 	}
 
 	boolean isIt5(Integer sk) {
-		return 5 == sk; // Don’t
+		return ((Integer)5).equals(sk);
 	}
 
 }
