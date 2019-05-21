@@ -11,6 +11,10 @@ public class Auto extends TrPriemone {
 		this.engine = engine;
 
 	}
+	
+	public Auto() {
+
+	}
 
 	public String getEngine() {
 		return engine;
@@ -20,6 +24,10 @@ public class Auto extends TrPriemone {
 		return color;
 	}
 
+	@Override
+	public void move() {
+
+		System.out.println("Vaziuoj kai masin");
+
+	}
 }
-
-

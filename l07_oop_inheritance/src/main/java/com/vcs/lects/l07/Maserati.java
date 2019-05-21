@@ -10,6 +10,14 @@ public class Maserati extends Auto {
 		System.out.println();
 	}
 
+	@Override
+	public void move() {
+
+		System.out.println("Plaukia kai laivas nes kitu atveju tiesiog...");
+		super.move();
+
+	}
+
 	public String getFridge() {
 		return fridge;
 	}

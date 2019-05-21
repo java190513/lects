@@ -6,7 +6,7 @@ public class Street {
 
 		Trabant limo = new Trabant();
 
-		Auto fiat = new Auto(CarColor.WHITE, "kazkoks...");
+		Auto fiat = new Auto();
 		fiat.setWheels(3);
 
 		Maserati model1 = new Maserati(CarColor.GOLD);
