@@ -1,0 +1,28 @@
+package com.vcs.lects.l08;
+
+public class Paspirtukas extends TrPriemone {
+
+	private double nuolydis = 1.0;
+
+	public Paspirtukas() {
+
+	}
+
+	public Paspirtukas(double nuolydis) {
+		this.nuolydis = nuolydis;
+	}
+
+	@Override
+	public double judejimoGreitis() {
+		return nuolydis * 6;
+	}
+
+	public double getNuolydis() {
+		return nuolydis;
+	}
+
+	public void setNuolydis(double nuolydis) {
+		this.nuolydis = nuolydis;
+	}
+
+}
