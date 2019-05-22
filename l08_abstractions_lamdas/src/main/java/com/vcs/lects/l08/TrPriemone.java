@@ -1,27 +1,13 @@
 package com.vcs.lects.l08;
 
-public abstract class TrPriemone {
+public interface TrPriemone {
 
-	private int wheels = 4;
+	void move();
 
-	public void move() {
+	double judejimoGreitis();
 
-		if (wheels > 0) {
-			System.out.println("vaziuoja nuo A iki B su " + wheels + " ratais");
-		} else {
-			System.out.println("juda...");
-		}
+	int getWheels();
 
-	}
-
-	public abstract double judejimoGreitis();
-
-	public int getWheels() {
-		return wheels;
-	}
-
-	public void setWheels(int wheels) {
-		this.wheels = wheels;
-	}
+	void setWheels(int wheels);
 
 }

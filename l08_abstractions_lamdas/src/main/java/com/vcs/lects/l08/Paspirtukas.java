@@ -1,6 +1,6 @@
 package com.vcs.lects.l08;
 
-public class Paspirtukas extends TrPriemone {
+public class Paspirtukas extends TrPriemoneImpl {
 
 	private double nuolydis = 1.0;
 

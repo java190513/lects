@@ -1,6 +1,6 @@
 package com.vcs.lects.l08;
 
-public abstract class Auto extends TrPriemone {
+public abstract class Auto extends TrPriemoneImpl implements Variklis {
 
 	private String engine = "1.9 TDI";
 	private CarColor color = CarColor.GREY;
@@ -15,8 +15,6 @@ public abstract class Auto extends TrPriemone {
 	public Auto() {
 
 	}
-
-	public abstract String uzvedimas();
 
 	public String getEngine() {
 		return engine;
