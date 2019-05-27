@@ -1,37 +1,21 @@
 package com.vcs.lects.l09;
 
+import static com.vcs.lects.l09.ToStrUtil.toStr;
+
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {	
 
-		// Rikuoti turi kaip skaicius, ne kaip string’us
-		String[] strs = { "100", "10", "1", "099" };
+		System.out.println(toStr("abc", "aa"));
+		
+//		Integer.parseInt(s)
+		
+		System.out.println(toStr(",", ((o1, o2) -> Integer.parseInt(o1) - Integer.parseInt(o2)), (o) -> o.toString(),  "16", "013"));
 
-		// Ir didejancia ir mazejancia tvarka rikuoti
-		Double[] dbls = { 3.14, 60.0, 1.46 };
+		System.out.println(toStr(15, 9, 0));
 
-		// Rodyt turi varda, bet rikuoti pagal eil nr.
-		Person[] prsns = { new Person("Ona", 7), new Person("Jonas", 13), new Person("Vardene", 2), };
-
-		StrConverter strConv = new StrConverter() {
-
-			@Override
-			public String toCustomString(Object obj) {
-				return ((Person) obj).getVardas();
-			}
-		};
-
-		StrConverter strConvToString = new StrConverter() {
-
-			@Override
-			public String toCustomString(Object obj) {
-				return obj.toString();
-			}
-		};
-
-		System.out.println(ToStrUtil.toStr(", ", strConv, prsns));
-
-		System.out.println(ToStrUtil.toStr(", ", strConvToString, strs));
+		System.out.println(toStr("; ", ((o1, o2) -> o1.getGimMetai() - o2.getGimMetai()), (o) -> o.getVardas(),
+				new Person("A", 10), new Person("B", 9)));
 
 	}
 
