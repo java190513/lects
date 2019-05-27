@@ -41,6 +41,8 @@ public class PrekiuKatalogas {
 
 		System.out.println("Pirmas pasitaikes: " + pk.searchItem(katalogas, "  DAR "));
 
+		System.out.println("Kiekis pagal zodi: " + pk.countItems(katalogas, "  clean "));
+
 	}
 
 	/**
@@ -65,8 +67,7 @@ public class PrekiuKatalogas {
 
 		return null;
 	}
-	
-	
+
 	/**
 	 * Suskaiciuoja elementus pagal paieskos fraze
 	 * 
@@ -75,13 +76,9 @@ public class PrekiuKatalogas {
 	 * @return kiekis
 	 */
 	public int countItems(Element category, String searchText) {
-		
-		
+
 		return 0;
 	}
-	
-	
-	
 
 	private boolean isItContainsTheText(String searchText, String name) {
 		return name.toLowerCase().contains(searchText.trim().toLowerCase());
