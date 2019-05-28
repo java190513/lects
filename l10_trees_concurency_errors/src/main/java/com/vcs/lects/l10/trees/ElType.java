@@ -1,4 +1,4 @@
-package com.vcs.lects.l10;
+package com.vcs.lects.l10.trees;
 
 public enum ElType {
 	

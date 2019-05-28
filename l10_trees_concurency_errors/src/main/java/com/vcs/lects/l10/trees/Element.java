@@ -1,4 +1,4 @@
-package com.vcs.lects.l10;
+package com.vcs.lects.l10.trees;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,6 +7,7 @@ import java.util.List;
 public class Element {
 
 	private String name;
+	
 	private List<Element> childs = new ArrayList<>();
 
 	public Element(String name, List<Element> childs) {

@@ -1,4 +1,7 @@
-package com.vcs.lects.l10;
+package com.vcs.lects.l10.trees;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PrekiuKatalogas {
 
@@ -8,7 +11,7 @@ public class PrekiuKatalogas {
 		 * Ukines
 		 */
 
-		Element vokiski = new Element("Vokiski", new Element("Gooten clear"), new Element("Fertxcdzasd"));
+		Element vokiski = new Element("Vokiski", new Element("Gooten clean"), new Element("Fertxcdzasd"));
 		Element lePrancuziski = new Element("LePrancuziskas", new Element("Parfume clean"),
 				new Element("LeEifel clean"), new Element("LeParfume"));
 
@@ -41,7 +44,16 @@ public class PrekiuKatalogas {
 
 		System.out.println("Pirmas pasitaikes: " + pk.searchItem(katalogas, "  DAR "));
 
-		System.out.println("Kiekis pagal zodi: " + pk.countItems(katalogas, "  clean "));
+		System.out.println("Kiekis pagal zodi: " + pk.countItems(katalogas, "  eifel "));
+
+		System.out.println("Paieska pagal fraze, sarasas: ");
+
+		for (Element el : pk.searchAllElements(katalogas, "clean")) {
+			System.out.println("   - " + el);
+		}
+		
+		
+		System.out.println( "Prekes path: " + pk.getCategoryPath(katalogas, "LeParfume") );
 
 	}
 
@@ -77,7 +89,61 @@ public class PrekiuKatalogas {
 	 */
 	public int countItems(Element category, String searchText) {
 
-		return 0;
+		int counter = isItContainsTheText(searchText, category.getName()) ? 1 : 0;
+
+		for (Element childElement : category.getChilds()) {
+			counter += countItems(childElement, searchText);
+		}
+
+		return counter;
+	}
+
+	/**
+	 * Suranda elementus pagal paieskos fraze
+	 * 
+	 * @param category   - kurioje sakoje ieskoma
+	 * @param searchText - paieskos fraze
+	 * @return elemntu sarasas
+	 */
+	public List<Element> searchAllElements(Element category, String searchText) {
+
+		List<Element> result = new ArrayList<>();
+		if (isItContainsTheText(searchText, category.getName())) {
+			result.add(category);
+		}
+
+		for (Element childElement : category.getChilds()) {
+			result.addAll(searchAllElements(childElement, searchText));
+		}
+
+		return result;
+
+	}
+
+	/**
+	 * Grazina elemnto kategorijos kelia (path)
+	 * 
+	 * @param category   - kurioje sakoje ieskoma
+	 * @param searchText - paieskos fraze
+	 * @return kelias iki elemento
+	 */
+	public String getCategoryPath(Element category, String elementName) {
+
+		String path = "";
+		if (category.getName().equals(elementName)) {
+			return category.getName();
+		} else {
+
+			for (Element childEl : category.getChilds()) {
+				String childPath = getCategoryPath(childEl, elementName);
+				
+				if (!childPath.isEmpty()) {
+					path += category.getName() + " > " + childPath;
+				}
+				
+			}
+		}
+		return path;
 	}
 
 	private boolean isItContainsTheText(String searchText, String name) {
