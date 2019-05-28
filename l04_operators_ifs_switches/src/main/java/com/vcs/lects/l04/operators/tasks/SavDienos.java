@@ -6,13 +6,13 @@ public class SavDienos {
 	
 	public String weekDayToStr(int i) {
 		
-		if (i == 1) return "pirm";
-		if (i == 2) return "antr";
-		if (i == 3) return "trec";
-		if (i == 4) return "ketv";
-		if (i == 5) return "penk";
-		if (i == 6) return "sest";
-		if (i == 7) return "sekm";
+		if (i == 1) return "Pirmadienis";
+		if (i == 2) return "Antradienis";
+		if (i == 3) return "Trečiadienis";
+		if (i == 4) return "Ketvirtadienis";
+		if (i == 5) return "Penktadienis";
+		if (i == 6) return "Šeštadienis";
+		if (i == 7) return "Sekmadienis";
 		
 		return "???";
 	}
