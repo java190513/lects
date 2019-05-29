@@ -3,36 +3,23 @@ package com.vcs.lects.l12.codesplit_02;
 public class DuomenuIsvedimas {
 
 
-    public void isvesti(String... lines) {
+    public void isvesti(EilutesIsvedimas eilIsv, Loginimas log, StringCheck strCheck, String... lines) {
 
-        System.out.println("isvesti() begin");
+        log.log("isvesti() begin");
 
         for (String line : lines) {
-            if (line != null && !line.isEmpty()) {
-                System.out.println(line);
+            if ( strCheck.check( line != null , line)) {
+                eilIsv.outEilute(line, false);
             } else {
-                System.out.println("empty line detected");
+                eilIsv.outEilute("empty line detected", true);
             }
         }
 
-        System.out.println("isvesti() end");
+        log.log("isvesti() end");
     }
 
 
-    public void isvestiNotNull(String... lines) {
 
-        System.out.println("isvesti() begin");
-
-        for (String line : lines) {
-            if (line != null) {
-                System.out.println(line);
-            } else {
-                System.out.println("empty line detected");
-            }
-        }
-
-        System.out.println("isvesti() end");
-    }
 
 
 }

@@ -1,4 +1,4 @@
-package com.vcs.lects.l12.codesplit_01.v1;
+package com.vcs.lects.l12.codesplit_01.viaparam;
 
 public class DuomenuIsvedimas {
 
