@@ -29,6 +29,10 @@ public class Library {
 
     private boolean filterCheck(Book book, String searchCriteria) {
 
+//        if (null == searchCriteria) {
+//            return false;
+//        }
+
         if (searchCriteria.isEmpty()) {
             return false;
         }
