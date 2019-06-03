@@ -58,6 +58,17 @@ public class Person {
 		this.lytis = lytis;
 	}
 
+	@Override
+	public String toString() {
+		return "Person{" +
+				"id='" + id + '\'' +
+				", vardas='" + vardas + '\'' +
+				", pavarde='" + pavarde + '\'' +
+				", ak='" + ak + '\'' +
+				", gimMetai=" + gimMetai +
+				", lytis=" + lytis +
+				'}';
+	}
 }
 
 enum Lytis {
