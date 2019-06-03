@@ -12,9 +12,38 @@ public class SizeConverter {
      */
 
 
+    private static final long _1024= 1024;
+    private static final long B = 1;
+    private static final long KB = B * _1024;
+    private static final long MB = KB * _1024;
+    private static final long GB = MB * _1024;
+    private static final long TB = GB * _1024;
+
+
     public String convertToHumanReadable(long sizeInBytes) {
 
-        //TODO
-        return "";
+        if (sizeInBytes < KB) {
+            return sizeInBytes + " b";
+        }
+        if (sizeInBytes < MB) {
+            return sizeInBytes / KB + " Kb";
+        }
+        if (sizeInBytes < GB) {
+            return cutReminder( 1.0 * sizeInBytes / MB ) + " Mb";
+        }
+        if (sizeInBytes < TB) {
+            return cutReminder(1.0 * sizeInBytes / GB) + " Gb";
+        }
+        return cutReminder(1.0 * sizeInBytes / TB) + " Tb";
+    }
+
+    private String cutReminder(double sizeWithReminder) {
+
+        sizeWithReminder *= 10;
+        long sLng = (long) sizeWithReminder;
+        if (sLng % 10 == 0) {
+            return "" + sLng / 10;
+        }
+        return "" + sLng / 10.0;
     }
 }
