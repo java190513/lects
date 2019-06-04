@@ -1,17 +1,35 @@
 package com.vcs.lects.l08.tasks;
 
-public class Resource {
+public class Resource implements DataReader, DataWriter {
+
+
+	public static void main(String[] args) {
+		Resource res = new Resource();
+		new Manager().readWrite(res);
+		new Reader().read(res);
+		new Writer().write(res);
+	}
+
 
 	private String data = "secret data";
 
+	@Override
 	public String readData() {
 		return data;
 	}
-
+	@Override
 	public void writeData(String data) {
 		this.data = data;
 	}
 
+}
+
+interface DataReader {
+	String readData();
+}
+
+interface DataWriter{
+	void writeData(String data);
 }
 
 class Manager {
@@ -22,15 +40,15 @@ class Manager {
 }
 
 class Reader {
-	public void read(Resource data) {
+	public void read(DataReader data) {
 		data.readData(); // Ok
-		data.writeData("new data"); // NOT OK
+//		data.writeData("new data"); // NOT OK
 	}
 }
 
 class Writer {
-	public void write(Resource data) {
-		data.readData(); // NOT OK
+	public void write(DataWriter data) {
+//		data.readData(); // NOT OK
 		data.writeData("new data"); // Ok
 	}
 }
