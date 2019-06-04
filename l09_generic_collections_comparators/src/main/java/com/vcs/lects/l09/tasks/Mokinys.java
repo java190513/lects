@@ -30,4 +30,11 @@ public class Mokinys {
 		this.vidurkis = vidurkis;
 	}
 
+	@Override
+	public String toString() {
+		return "Mokinys{" +
+				"vardas='" + vardas + '\'' +
+				", vidurkis=" + vidurkis +
+				'}';
+	}
 }
