@@ -17,7 +17,6 @@ import javax.imageio.ImageIO;
 public class HelloWorldController {
 
 
-
     @Autowired
     private HttpServletRequest request;
 
@@ -25,7 +24,6 @@ public class HelloWorldController {
     public String sayHello() {
         return "<html><body><h1>Labas pasauli, as REST servisas (" + request.getRemoteHost()
                 + ")</h1><p align='center'><img src='http://192.168.115.133:8080/generated-image/"+request.getRemoteHost()+"' alt='Paveiksliukas su tavo IP adresu'></p></body></html>";
-
     }
 
     @GetMapping("name-{vardas}")
